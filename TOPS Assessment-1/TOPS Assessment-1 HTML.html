@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="icon" href="./TOPS Assessment-1 png.png">
+    <link rel="stylesheet" href="TOPS Assessment-1 CSS.css">
+</head>
+
+<body>
+    <h1>Student Registration Form</h1>
+    <form onsubmit="return validform()" method="post" class="form">
+        <div class="row">
+            <div class="col-1 row"><label for="First Name">First Name :</label></div>
+            <div class="col-2"><input class="inp-1" type="text" placeholder="Enter your First Name" id="firstname"
+                    pattern="[a-z]+" title="Please enter alphabet only"></div>
+            <div id="firstnameerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Last Name">Last Name :</label></div>
+            <div class="col-2"><input class="inp-1" type="text" placeholder="Enter your Last Name" id="lastname"
+                    pattern="[a-z]+" title="Please enter alphabet only"></div>
+            <div id="lastnameerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Email">Email :</label></div>
+            <div class="col-2"><input class="inp-1" type="email" placeholder="it should contain @..." required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Mobile">Mobile :</label></div>
+            <div class="col-2"><input class="inp-1" type="tel" placeholder="only 10 digits are Allowed" id="mobile"
+                    pattern="[0-9]+" title="Please enter number only"></div>
+            <div id="mobileerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Gender">Gender :</label></div>
+            <div class="col-2">
+                <input type="radio" name="Gender" value="m"><span>Male</span>
+                <input type="radio" name="Gender" value="f"><span>Female</span>
+                <input type="radio" name="Gender" value="o"><span>Other</span>
+            </div>
+            <div id="gendererror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Date Of Birth">Date Of Birth :</label></div>
+            <div class="col-2"><input class="inp-1" type="date" name="Date Of Birth" id="DOB" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"><label for="Address">Address :</label></div>
+            <div class="col-2"><textarea class="inp-1" name="Address" id="Address" cols="30" rows="10"></textarea></div>
+            <div id="addresserror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="City">City :</label></div>
+            <div class="col-2"><input class="inp-1" type="text" name="State" id="city" pattern="[a-z]+"
+                    title="Please enter alphabet only"></div>
+            <div id="cityerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Area PIN">Area PIN :</label></div>
+            <div class="col-2"><input class="inp-1" type="number" name="Area PIN" id="PIN" pattern="[0-9]+"
+                    title="Please enter number only"></div>
+            <div id="pinerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="State">State :</label></div>
+            <div class="col-2"><input class="inp-1" type="text" name="State" id="state" pattern="[a-z]+"
+                    title="Please enter alphabet only"></div>
+            <div id="stateerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Qualification">Qualification :</label></div>
+            <div class="col-2">
+                <select name="Qualification" id="Qualification" class="inp-1">
+                    <option value="Select Qualification">Select Qualification :</option>
+                    <option value="10th">10th</option>
+                    <option value="12th">12th</option>
+                    <option value="B.E">B.E</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="M.Sc">M.Sc</option>
+                </select>
+            </div>
+            <div id="qualificationerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"><label for="Specialization">Specialization :</label></div>
+            <div class="col-2">
+                <input type="checkbox" name="Specialization" id="Computer Science"><span>Computer Science</span><br>
+                <input type="checkbox" name="Specialization" id="Information Technology"><span>Information
+                    Technology</span><br>
+                <input type="checkbox" name="Specialization" id="Computer Architecture"><span>Computer
+                    Architecture</span><br>
+                <input type="checkbox" name="Specialization" id="Tele Communication"><span>Tele Communication</span>
+            </div>
+            <div id="specializationerror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 row"><label for="Password">Password :</label></div>
+            <div class="col-2"><input class="inp-1" type="password" name="Password" id="Password"></div>
+            <div id="passworderror" class="col-3 row"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"><input class="btn" type="submit" value="Registere Here!"></div>
+        </div>
+    </form>
+    <script src="TOPS Assessment-1 JS.js"></script>
+</body>
+
+</html>
