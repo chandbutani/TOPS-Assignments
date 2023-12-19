@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<style>
+* {
+  		box-sizing: border-box;
+  		margin:0;
+  		padding:0;
+		}
+
+		img {
+		  vertical-align: middle;
+		      width: 100%;
+                     height: auto;
+		}
+    .mySlides {
+        width: 100%;
+        display:none;
+         min-height:300px;
+         height:90vh;
+    }
+	.slide-content {
+		 position: relative;
+  margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   width: 100%;
+  
+   height:100vh;
+	}
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    .arrow-left {
+        border-width: 30px 40px 30px 0;
+        border-color: transparent #fff transparent transparent;
+        left: 0;
+        margin-left: 30px;
+    }
+
+    .arrow-right {
+        border-width: 30px 0 30px 40px;
+        border-color: transparent transparent transparent #fff;
+        right: 0;
+        margin-right: 30px;
+    }
+
+    .thumbnail {
+        display: flex;
+    }
+
+    .column {
+        flex: 1;
+    }
+
+    .column img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .demo:hover,
+    .active {
+        opacity: 1;
+    }
+</style>
+
+
+
+
+
+
+
+<body>
+  <div class="slide-content">
+    <div class="mySlides">
+        <img src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%">
+    </div>
+    <a class="arrow arrow-left" id="arrow-left"></a>
+    <a class="arrow arrow-right" id="arrow-right"></a>
+    <div class="thumbnail">
+        <div class="column">
+            <img class="demo cursor" src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%"data-slide="0" alt="The Woods">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%" data-slide="1"   alt="Trolltunga, Norway">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%"   data-slide="2" alt="Mountains and fjords">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:100%"  data-slide="3" alt="Mountains and fjords">
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script>
+var strIndex = 0;
+    var slides = document.querySelectorAll(".mySlides");
+    var demo = document.querySelectorAll(".demo");
+
+    var leftarr = document.getElementById("arrow-left");
+    var rightarr = document.getElementById("arrow-right");
+    leftarr.addEventListener("click", function() {
+        arrSlides(-1);
+    });
+
+
+demo.forEach(function (element){
+  element.addEventListener("click", function(){
+    var note = element.getAttribute('data-slide');
+        currentSlide(parseInt(note));
+  });
+});
+
+  
+
+    rightarr.addEventListener("click", function() { arrSlides(1) });
+
+    function reset() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < demo.length; i++) {
+            demo[i].className = demo[i].className.replace(" active", "");
+        }
+    }
+
+    function arrSlides(n) {
+        slideShow(strIndex += n);
+    }
+
+    function currentSlide(n) {
+        slideShow(strIndex = n);
+    }
+
+    function slideShow(n) {
+        reset();
+        var lengt = slides.length - 1;
+        if (n < 0) { strIndex = lengt }
+        if (n > lengt ) { strIndex = 0 }
+        slides[strIndex].style.display = "block";
+        demo[strIndex].classList += " active";
+    }
+
+slideShow();
+</script>
+
+
+
+</html>
